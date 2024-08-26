@@ -8,7 +8,6 @@ while true; do
         echo "Postgres is up!"
         python manage.py makemigrations admin auth myapp
         python manage.py migrate
-
         break
     else
         echo "Postgres isn't up...waiting..."

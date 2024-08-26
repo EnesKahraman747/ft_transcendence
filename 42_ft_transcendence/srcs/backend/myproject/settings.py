@@ -30,7 +30,38 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',  # BCrypt algorithm with SHA-256 hash
 ]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'localhost',
+    '192.168.32.1',
+    '169.254.131.21',
+    '20.79.107.6',
+    'pong42.azurewebsites.net',
+    '127.0.0.1',
+    'pong42.vercel.app',
+    'four2trans-backend.onrender.com', 
+    'localhost:3000',
+    'c3r1p1.42vienna.com',
+    'c3r1p5.42vienna.com',
+    'c3r1p2.42vienna.com',
+    'c3r1p3.42vienna.com',
+    '10.13.1.5',
+    '10.13.1.1',
+    'localhost:5500',
+    'localhost:8443',
+    'localhost:443',
+    'localhost:8000',
+    'ehab42.vercel.app',
+    '42transcendence.vercel.app',
+    'eelasam.vercel.app',
+    'ehab42.vercel.app:8443',
+    '42transcendence.vercel.app:8443',
+    'eelasam.vercel.app:8443',
+    'localhost:8080',
+    'api.intra.42.fr',
+    'transcendence-beige.vercel.app',
+    'backend',
+    'frontend',
+]
 
 
 
@@ -41,6 +72,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    #'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -57,7 +89,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 SIMPLE_JWT = {
@@ -99,10 +134,15 @@ CHANNEL_LAYERS = {
     },
 }
 
+# STATICFILES_FINDERS = [
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+# ]
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB'),
+        'NAME': os.environ.get('POSTGRES_DB', BASE_DIR / 'db.sqlite3'),
         'USER': os.environ.get('POSTGRES_USER', 'user'),
         'PASSWORD': os.environ.get('PGPASSWORD', 'password'),
         'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
@@ -147,7 +187,7 @@ REST_FRAMEWORK = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Vienna'
 
 USE_I18N = True
 
@@ -159,13 +199,48 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8443',
     'https://localhost:8443',
     'https://localhost:443',
+    'https://10.13.1.1:8443',
+    'https://10.13.1.2:8443',
+    'https://10.13.1.3:8443',
+    'https://10.13.1.4:8443',
+    'https://10.13.1.5:8443',
+    'https://10.13.1.5',
     'http://127.0.0.1',
     'https://127.0.0.1:8000',
     'https://127.0.0.1',
+    'http://127.0.0.1:5500',
+    'https://pong42.vercel.app',
+    'https://ehab42.vercel.app',
+    'https://42transcendence.vercel.app',
+    'https://eelasam.vercel.app',
+    'https://ehab42.vercel.app:8443',
+    'https://42transcendence.vercel.app:8443',
+    'https://eelasam.vercel.app:8443',
+    'http://pong42.vercel.app',
+    'http://pong42.azurewebsites.net',
+    'https://pong42.azurewebsites.net',
+    'http://localhost:3000',
+    'http://localhost:5500',
+    'https://transcendence-beige.vercel.app',
     'https://api.intra.42.fr',
+    'https://c3r1p1.42vienna.com',
+    'https://c3r1p3.42vienna.com',
+    'https://c3r1p4.42vienna.com',
+    'https://c3r1p5.42vienna.com',
+    'https://c3r1p1.42vienna.com:8443',
+    'https://c3r1p3.42vienna.com:8443',
+    'https://c3r1p4.42vienna.com:8443',
+    'https://c3r1p5.42vienna.com:8443',
+    'https://192.168.32.1',
+    'https://169.254.131.21',
+    'https://20.79.107.6',
+    'http://169.254.131.21',
+    'http://20.79.107.6'
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    'https://192.168.32.1',
+    'http://localhost:8080',
     'http://localhost',
     'https://localhost',
     'http://localhost:8443',
@@ -174,10 +249,51 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1',
     'https://127.0.0.1:8000',
     'https://127.0.0.1',
+    'https://10.13.1.1:8443',
+    'https://10.13.1.1',
+    'https://10.13.1.2:8443',
+    'https://10.13.1.3:8443',
+    'https://10.13.1.4:8443',
+    'https://10.13.1.5:8443',
+    'https://10.13.1.5',
+    'https://c3r1p1.42vienna.com',
+    'https://c3r1p3.42vienna.com',
+    'https://c3r1p4.42vienna.com',
+    'https://c3r1p5.42vienna.com',
+    'https://c3r1p1.42vienna.com:8443',
+    'https://c3r1p3.42vienna.com:8443',
+    'https://c3r1p4.42vienna.com:8443',
+    'https://c3r1p5.42vienna.com:8443',
+    'http://127.0.0.1:5500',
+    'https://ehab42.vercel.app',
+    'https://42transcendence.vercel.app',
+    'https://eelasam.vercel.app',
+    'https://ehab42.vercel.app:8443',
+    'https://42transcendence.vercel.app:8443',
+    'https://eelasam.vercel.app:8443',
+    'https://pong42.vercel.app',
+    'http://pong42.vercel.app',
+    'http://pong42.azurewebsites.net',
+    'https://pong42.azurewebsites.net',
+    'http://localhost:3000',
+    'http://localhost:5500',
+    'https://transcendence-beige.vercel.app',
     'https://api.intra.42.fr',
+    'https://169.254.131.21',
+    'https://20.79.107.6',
+    'http://169.254.131.21',
+    'http://20.79.107.6'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# STATIC_URL = '/static/'
+
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
