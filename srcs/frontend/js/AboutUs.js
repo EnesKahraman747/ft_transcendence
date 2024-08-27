@@ -1,13 +1,15 @@
 function showAboutUsPage() {
   const cardsData = [
     {
-      imgSrc: 'src/ddyankov.jpg',
-      imgAlt: 'xxx',
-      firstName: 'xxx',
-      lastName: 'aaaa',
+      imgSrc: 'src/we.png',
+      imgAlt: '',
+      firstName: 'Hüseyin Öner - Mustafa Saydam - Bengisu Kayan - Enes Kahraman',
+      lastName: '42 Ping Pong Projesi 23.06.2024 - 27.08.2024',
+      
     },
   ];
 
+  
   const fragment = document.createDocumentFragment();
 
   cardsData.forEach(data => {
@@ -39,21 +41,7 @@ function showAboutUsPage() {
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('icon-container');
 
-    const githubBtn = document.createElement('button');
-    const githubIcon = document.createElement('i');
-    githubBtn.addEventListener('click', () => {
-      window.open(data.githubLink, '_blank');
-    });
-
-    const linkedinBtn = document.createElement('button');
-    const linkedinIcon = document.createElement('i');
-    linkedinIcon.classList.add('bi', 'bi-linkedin');
-    linkedinBtn.appendChild(linkedinIcon);
-    linkedinBtn.addEventListener('click', () => {
-      window.open(data.linkedinLink, '_blank');
-    });
-    iconDiv.appendChild(linkedinBtn);
-
+  
     card.appendChild(iconDiv);
 
     fragment.appendChild(card);
