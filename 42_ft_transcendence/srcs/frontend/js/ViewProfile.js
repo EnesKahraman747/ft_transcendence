@@ -85,10 +85,6 @@ async function fetchAndDisplayViewProfile(username) {
                         }
                     } else if (target.id === 'removefriend') {
                         try {
-                           
-        
-                            
-                            
                             const response = await fetch(`/api/remove-friend?username=${username}`, {
                                 method: 'POST',
                                 headers: {
@@ -111,9 +107,6 @@ async function fetchAndDisplayViewProfile(username) {
                         }
                     } else if (target.id === 'blockuser') {
                         try {
-                            
-                    
-                            
                             const response = await fetch(`/api/block-user?username=${username}`, {
                                 method: 'POST',
                                 headers: {

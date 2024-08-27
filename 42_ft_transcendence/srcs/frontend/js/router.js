@@ -21,8 +21,6 @@ const routes = {
   "#aboutus": "/views/aboutus.html",
   "#pong3": "/views/pong3.html",
   "#pong4": "/views/pong4.html",
-  "#tic1": "/views/tic1.html",
-  "#tic2": "/views/tic2.html",
   "#tournament": "/views/tournament.html",
   "#tournament2": "/views/tournament2.html",
   "#tournaments": "/views/alltournaments.html",
@@ -131,37 +129,15 @@ if (!currentLanguage) {
   const userLanguage = navigator.language.toLowerCase();
   if (userLanguage.startsWith('en')) {
     currentLanguage = 'en';
-  } else if (userLanguage.startsWith('de') || userLanguage.startsWith('at') || userLanguage.startsWith('ch')) {
-    currentLanguage = 'at';
   } else if (userLanguage.startsWith('tr')) {
     currentLanguage = 'tr';
-  } else if (userLanguage.startsWith('bg')) {
-    currentLanguage = 'bg';
   } else if (userLanguage.startsWith('fr')) {
     currentLanguage = 'fr';
-  } else if (userLanguage.startsWith('ar')) {
-    currentLanguage = 'eg';
-  } else if (userLanguage.startsWith('es')) {
-    currentLanguage = 'es';
-  } else if (userLanguage.startsWith('it')) {
-    currentLanguage = 'it';
-  } else if (userLanguage.startsWith('ua')) {
-    currentLanguage = 'ua';
-  } else if (userLanguage.startsWith('ru')) {
-    currentLanguage = 'ru';
-  } else if (userLanguage.startsWith('pt')) {
-    currentLanguage = 'pt';
-  } else if (userLanguage.startsWith('zh')) {
-    currentLanguage = 'zh';
   } else {
     currentLanguage = 'en';
   }
   localStorage.setItem('language', currentLanguage);
 }
-
-
-
-
 
 const apiUrl = `/api/messages`;
 const signinUrl = `/api/signin42c/`;
@@ -370,17 +346,11 @@ const handleLocation = async () => {
     case '#pong4':
       showPong4();
       break;
-    case '#tic1':
-      showTic1();
-      break;
     case '#login':
       
           await handleLogin(msgReg);
           
         break;
-    case '#tic2':
-      showTic2();
-      break;
     case '#tournaments':
       allTournaments();
       break;

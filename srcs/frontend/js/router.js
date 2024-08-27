@@ -21,8 +21,6 @@ const routes = {
   "#aboutus": "/views/aboutus.html",
   "#pong3": "/views/pong3.html",
   "#pong4": "/views/pong4.html",
-  "#tic1": "/views/tic1.html",
-  "#tic2": "/views/tic2.html",
   "#tournament": "/views/tournament.html",
   "#tournament2": "/views/tournament2.html",
   "#tournaments": "/views/alltournaments.html",
@@ -369,17 +367,11 @@ const handleLocation = async () => {
     case '#pong4':
       showPong4();
       break;
-    case '#tic1':
-      showTic1();
-      break;
     case '#login':
       
           await handleLogin(msgReg);
           
         break;
-    case '#tic2':
-      showTic2();
-      break;
     case '#tournaments':
       allTournaments();
       break;
