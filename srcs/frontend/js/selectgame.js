@@ -58,6 +58,17 @@ async function showGameModes() {
             href: "#tournament",
         },
         {
+            text: single,
+            imgPlaceholder: './src/tictac1.png',
+            href: "#tic1",
+        },
+        {
+            text: multi2,
+            imgPlaceholder: './src/tic3.png',
+            href: "#tic2",
+        }
+        ,
+        {
             text: tournament,
             imgPlaceholder: './src/tictac2.png',
             href: "#tournament2",

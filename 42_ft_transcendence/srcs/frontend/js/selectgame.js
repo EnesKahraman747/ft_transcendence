@@ -8,6 +8,12 @@ async function showGameModes() {
             associatedCards: ["#player3d1", "#playerai1", "#pongMultiplayer", "#tournament"] 
         },
         {
+            text: "Tic Tac Toe",
+            imgPlaceholder: './src/tictactoe.png',
+            href: "#tictactoe",
+            associatedCards: ["#tic1", "#tic2", "#tournament2"] 
+        },
+        {
             text: rps,
             imgPlaceholder: './src/rps.png',
             href: "#rps", 
@@ -57,6 +63,17 @@ async function showGameModes() {
             imgPlaceholder: './src/multiplayer.jpeg',
             href: "#tournament",
         },
+        {
+            text: single,
+            imgPlaceholder: './src/tictac1.png',
+            href: "#tic1",
+        },
+        {
+            text: multi2,
+            imgPlaceholder: './src/tic3.png',
+            href: "#tic2",
+        }
+        ,
         {
             text: tournament,
             imgPlaceholder: './src/tictac2.png',
